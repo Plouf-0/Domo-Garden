@@ -81,6 +81,12 @@ Design and develop a Zigbee-based sensor network. The network will collect data 
         Develop firmware for the EFR32MG22E224F512IM40 to read sensors, communicate via Zigbee, and send commands to the electrovalve with the EFR32xG22E Explorer Kit.
         Develop software for the Zigbee hub to manage data collection and Wi-Fi transmission to Home Assistant with the ESP32 and the Zigbee CC2530 Development Board.
 
+    Phase 2^2: Hardware Design
+        Design the PCB for sensor nodes (powered by EFR32MG22E224F512IM40).
+        Create a schematic for power management (battery, solar charging).
+        Select components for the electrovalve control system.
+        Design and print the casing.
+
     Phase 3: Integration with Home Assistant
         Set up the Home Assistant server with Zigbee2MQTT or ZHA.
         Implement data visualization for sensor data.
@@ -91,17 +97,11 @@ Design and develop a Zigbee-based sensor network. The network will collect data 
         Perform range and battery life tests.
         Ensure proper communication between the Zigbee nodes and the hub.
 
-    Phase 5: Hardware Design
-        Design the PCB for sensor nodes (powered by EFR32MG22E224F512IM40).
-        Create a schematic for power management (battery, solar charging).
-        Select components for the electrovalve control system.
-        Design and print the casing.
-
     Phase 6: Field Testing
         Deploy the system in a real environment (garden, yard).
         Monitor sensor performance, network stability, and control system reliability.
 
-    Phase 7: Finalization & Documentation
+    Phase 6: Finalization & Documentation
         Finalize the design based on testing results.
         Prepare full documentation, including schematics, software, and user guide.
 
