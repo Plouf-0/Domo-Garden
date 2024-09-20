@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Components")(type "KiCad")(uri "${KIPRJMOD}/Components")(options "")(descr ""))
+  (lib (name "capa10uf6.3v_CC0805KKX5R5BB106")(type "KiCad")(uri "${KIPRJMOD}/Components/capa10uf6.3v_CC0805KKX5R5BB106")(options "")(descr ""))
+  (lib (name "Usb-Uart_INTERFACE-CP2102-GMR_QFN28_")(type "KiCad")(uri "${KIPRJMOD}/Components/Usb-Uart_INTERFACE-CP2102-GMR_QFN28_")(options "")(descr ""))
+)

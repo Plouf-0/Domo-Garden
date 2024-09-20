@@ -30,14 +30,14 @@ Design and develop a Zigbee-based sensor network. The network will collect data 
 
 #### Hardware Specifications
 
-    Microcontroller: 
+    Microcontroller:
         ESP32
-        EFR32MG22E224F512IM40
+        EFR32MG22E224F512IM32
 
-    Power Supply: Battery-powered nodes, possible use of solar panels. Minimum 1-month battery life without recharging.
+    Power Supply: Battery-powered nodes, possible use of solar panels. Minimum 1-month battery life without recharging. A 1000mAh = 1 year of battery life.
 
     Radio Frequency: Zigbee protocol.
-    
+
     Communication Range: Up to 100 meters from hub, with a mesh network to cover distances up to 20 meters between each module.
 
     Sensors:

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 3220-10-0300-00-TR
+D Conn Shrouded Header HDR 10 POS 1.27mm Solder ST SMD T/R
+K
+F http://www.cnctech.us/pdfs/3220-XX-0300-00-TR.pdf
+$ENDCMP
+#
+#End Doc Library

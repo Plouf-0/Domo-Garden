@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "PDV-P8003")(type "KiCad")(uri "${KIPRJMOD}/Components/photoresistor_PDV-P8003/PDV-P8003.kicad_sym")(options "")(descr ""))
+  (lib (name "CC0805KKX5R5BB106")(type "KiCad")(uri "${KIPRJMOD}/Components/capa10uf6.3v_CC0805KKX5R5BB106/CC0805KKX5R5BB106.kicad_sym")(options "")(descr ""))
+  (lib (name "INTERFACE-CP2102-GMR_QFN28_")(type "KiCad")(uri "${KIPRJMOD}/Components/Usb-Uart_INTERFACE-CP2102-GMR_QFN28_/INTERFACE-CP2102-GMR_QFN28_.kicad_sym")(options "")(descr ""))
+)
