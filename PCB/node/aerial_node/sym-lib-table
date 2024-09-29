@@ -1,0 +1,8 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "CC0805KKX5R5BB106")(type "KiCad")(uri "/home/plouf/Work/Domo-Garden/PCB/node/Components/capa10uf6.3v_CC0805KKX5R5BB106/CC0805KKX5R5BB106.kicad_sym")(options "")(descr ""))
+  (lib (name "PDV-P8003")(type "KiCad")(uri "/home/plouf/Work/Domo-Garden/PCB/node/Components/photoresistor_PDV-P8003/PDV-P8003.kicad_sym")(options "")(descr ""))
+  (lib (name "INTERFACE-CP2102-GMR_QFN28_")(type "KiCad")(uri "/home/plouf/Work/Domo-Garden/PCB/node/Components/Usb-Uart_INTERFACE-CP2102-GMR_QFN28_/INTERFACE-CP2102-GMR_QFN28_.kicad_sym")(options "")(descr ""))
+  (lib (name "EFR32MG22_module-eagle-import")(type "KiCad")(uri "/home/plouf/Work/Domo-Garden/PCB/node/Components/EFR32MG22-miniboard-main/EFR32MG22_module-eagle-import.kicad_sym")(options "")(descr ""))
+  (lib (name "Linear_Regular_custom")(type "KiCad")(uri "/home/plouf/Work/Domo-Garden/PCB/node/Components/EFR32MG22-miniboard-main/Linear_Regular_custom.kicad_sym")(options "")(descr ""))
+)
