@@ -6681,7 +6681,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 86.36) (xy 165.1 86.36)
+			(xy 161.29 86.36) (xy 168.91 86.36)
 		)
 		(stroke
 			(width 0)
@@ -7051,7 +7051,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 86.36) (xy 209.55 86.36)
+			(xy 176.53 86.36) (xy 209.55 86.36)
 		)
 		(stroke
 			(width 0)
@@ -8630,7 +8630,7 @@
 	)
 	(symbol
 		(lib_id "PCM_4ms_Resistor:2.7k_0603")
-		(at 168.91 86.36 90)
+		(at 172.72 86.36 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8639,7 +8639,7 @@
 		(fields_autoplaced yes)
 		(uuid "28bbb8a3-80a6-4561-88ca-e983ca6e08bf")
 		(property "Reference" "R5"
-			(at 168.91 80.01 90)
+			(at 172.72 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8647,7 +8647,7 @@
 			)
 		)
 		(property "Value" "2.7k_0603"
-			(at 168.91 88.9 90)
+			(at 172.72 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8656,7 +8656,7 @@
 			)
 		)
 		(property "Footprint" "PCM_4ms_Resistor:R_0603"
-			(at 181.61 88.9 0)
+			(at 185.42 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8666,7 +8666,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 168.91 86.36 0)
+			(at 172.72 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8675,7 +8675,7 @@
 			)
 		)
 		(property "Description" "2k7, 1%, 1/10W, 0603"
-			(at 168.91 86.36 0)
+			(at 172.72 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8684,7 +8684,7 @@
 			)
 		)
 		(property "Specifications" "2k7, 1%, 1/10W, 0603"
-			(at 176.784 88.9 0)
+			(at 180.594 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8694,7 +8694,7 @@
 			)
 		)
 		(property "Manufacturer" "Yageo"
-			(at 178.308 88.9 0)
+			(at 182.118 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8704,7 +8704,7 @@
 			)
 		)
 		(property "Part Number" "RC0603FR-072K7L"
-			(at 179.832 88.9 0)
+			(at 183.642 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8714,7 +8714,7 @@
 			)
 		)
 		(property "Display" "2.7k"
-			(at 168.91 82.55 90)
+			(at 172.72 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8722,7 +8722,7 @@
 			)
 		)
 		(property "JLCPCB ID" "C13167"
-			(at 168.91 82.55 90)
+			(at 172.72 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
