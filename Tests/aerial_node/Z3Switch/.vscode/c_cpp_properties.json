@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "name": "Z3Switch",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": ""
+        }
+    ],
+    "version": 4
+}

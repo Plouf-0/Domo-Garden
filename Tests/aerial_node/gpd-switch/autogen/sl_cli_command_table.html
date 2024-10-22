@@ -1,0 +1,719 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>CLI Command Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,300;1,500&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,500;1,300;1,500&display=swap" rel="stylesheet">
+<style>
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, code, em, strong,
+ol, ul, li, article, aside, footer, header, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  background: #f8f8f8;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  padding-bottom: 36px;
+}
+ol, ul {
+  list-style: none;
+}
+strong {
+  font-weight: 500;
+}
+em {
+  font-style: italic;
+}
+
+.command {
+  background: #ffffff;
+  margin: 18px;
+  position: relative;
+  padding: 21px 24px 24px 24px;
+  min-width: 300px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.27);
+  border-radius: 2px;
+}
+.command-header-bar {
+  position: absolute;
+  height: 32px;
+  width: 4px;
+  top: 24px;
+  left: 0;
+  background-color: #0086d9;
+}
+
+h1 {
+  font-size: 42px;
+  margin: 18px;
+  line-height: 54px;
+}
+h2 {
+  font-size: 36px;
+  margin: 18px;
+  padding-top: 18px;
+  line-height: 42px;
+}
+h3 {
+  font-size: 30px;
+  margin: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 24px;
+  margin: 18px;
+  line-height: 30px;
+}
+
+.command-header {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px;
+  color: #333333;
+  line-height: 38px;
+  padding-bottom: 8px;
+}
+.group-header {
+  font-family: 'Roboto Mono', monospace;
+  color: #444447;
+}
+
+.command-name {
+  font-weight: 500;
+}
+.command-argument {
+  padding-left: 12px;
+}
+.command-handler {
+  display:inline-block;
+  float: right;
+  font-size: 12px;
+  line-height: 38px;
+}
+.group-info > .help, .group-info > .alias-list {
+  margin: 0 18px;
+}
+
+.arguments-title {
+  font-weight: 500;
+  margin-top: 8px;
+  line-height: 20px;
+}
+.argument-list li {
+  margin-left: 12px;
+  line-height: 20px;
+}
+.argument-list .argument-name {
+  font-family: 'Roboto Mono', monospace;
+  display: inline-block;
+  width: 50px;
+}
+
+.aliases-title {
+  font-weight: 500;
+  margin-top: 8px;
+  line-height: 20px;
+  display: inline-block;
+}
+.alias-list .alias {
+  margin-left: 12px;
+  line-height: 20px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.search {
+  padding: 0 18px;
+  float: right;
+  font-size: 18px;
+}
+
+#search {
+  padding: 12px;
+  border: 1px solid #acacac;
+  border-radius: 2px;
+  width: 300px;
+  font-size: 16px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+}
+
+</style>
+</head>
+
+<!--
+Example syntax (.slcc or .slcp) for populating this file:
+
+  template_contribution:
+    - name: cli_command          # Register a command
+      value:
+        name: status             # Name of command
+        handler: status_command  # Function to be called. Must be defined
+        help: "Prints status"    # Optional help description
+        shortcuts:               # Optional shorcut list
+          - name: st
+        argument:                # Argument list, if apliccable
+          - type: uint8          # Variable type
+            help: "Channel"      # Optional description
+          - type: string
+            help: "Text"
+    - name: cli_group            # Register a group
+      value:
+        name: shell              # Group name
+        help: "Shell commands"   # Optional help description
+        shortcuts:               # Optional shorcuts
+          - name: sh
+    - name: cli_command
+      value:
+        name: repeat
+        handler: repeat_cmd
+        help: "Repeat commands"
+        shortcuts:
+          - name: r
+          - name: rep
+        group: shell            # Associate command with group
+        argument:
+          - type: string
+            help: "Text"
+          - type: additional
+            help: "More text"
+-->
+
+<body>
+<div class="search">
+<input type="text" tabindex="0" id="search" placeholder="Search for command..." />
+</div>
+<h1>CLI Command Reference</h1>
+
+
+
+<div class="command-list">
+
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name">reset</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_reset_command</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Resets the node.</div>
+      
+      
+    </div>
+  </div>
+
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name">send-gpdf</span>
+        <span class="command-argument">u8</span>
+        <span class="command-argument">hex</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_send_gpdf</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sends out a GPD command based on the set GPD parameters.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>Frame type 0 = Data frame, 1 = Maintenance frame.
+        </li>
+        <li>
+        <span class="argument-name">hex</span>Command payload
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+<div class="group">
+  <div class="group-header">
+    <h2 class="group-name"> zigbee_print</h2>
+  </div>
+  <div class="group-info">
+    
+    
+    <div class="command-list">
+    
+<div class="group">
+  <div class="group-header">
+    <h3 class="group-name"> zigbee_print enable_type</h3>
+  </div>
+  <div class="group-info">
+    
+    
+    <div class="command-list">
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> zigbee_print enable_type stack</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sli_zigbee_debug_print_enable_stack_type_command</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Enable/disable debug `stack` print type.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>Enable/disable
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> zigbee_print enable_type core</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sli_zigbee_debug_print_enable_core_type_command</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Enable/disable debug `core` print type.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>Enable/disable
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> zigbee_print enable_type app</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sli_zigbee_debug_print_enable_app_type_command</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Enable/disable debug `app` print type.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>Enable/disable
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> zigbee_print enable_type zcl</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sli_zigbee_debug_print_enable_zcl_type_command</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Enable/disable debug `zcl` print type.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>Enable/disable
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> zigbee_print enable_type legacy_af_debug</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sli_zigbee_debug_print_enable_legacy_af_debug_type_command</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Enable/disable debug `legacy app framework debug` print type.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>Enable/disable
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    </div>
+  </div>
+</div></div>
+  </div>
+</div>
+<div class="group">
+  <div class="group-header">
+    <h2 class="group-name"> node</h2>
+  </div>
+  <div class="group-info">
+    <span class="help">gpd node related commands</span>
+    
+    <div class="command-list">
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> node info</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_node_info</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Prints the GPD node information.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> node channel-req</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_channel_req</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sends out a channel request command from the GPD.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> node comm</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_comm_req</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sends out a commissioning request and moves the commissioning state machine based on the parameter provided.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>0x00 - Decommission, 0x01 = A single commissioning GPDF, 0xFF = Start automatic commissioning process
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> node set-addr</span>
+        <span class="command-argument">hex</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_node_set_addr</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets the address of the GPD node.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">hex</span>array of 8 bit data, where AppId = arg[0], if AppId = 0 then SrcId = arg[1-4] but if AppId = 2 then Endpoint = arg[1] and EUI = arg[2-9]
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> node set-ac</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_node_set_auto_comm</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets the auto-commission parameter of the GPD node.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>Auto-commissioning parameter of the GPD node
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> node set-bidir-param</span>
+        <span class="command-argument">u8</span>
+        <span class="command-argument">u8</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_node_set_bi_dir_param</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets bidirectional parameter of the GPD node.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>rx-after-tx flag.
+        </li>
+        <li>
+        <span class="argument-name">u8</span>rx-offset in milliseconds.
+        </li>
+        <li>
+        <span class="argument-name">u8</span>rxwindow in milliseconds.
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> node set-channel</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_node_set_channel</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets the channel of operation for unidirectional GPD or channel for bidirectional commissioning.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>GPD channel from 11 to 26
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> node set-sec-key-type</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_node_set_sec_key_type</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets the bidirectional commissioning key type.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>Key type between 0 and 7
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> node set-sec-key</span>
+        <span class="command-argument">hex</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_node_set_sec_key</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets the bidirectional key.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">hex</span>128 bit key
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> node set-sec-fc</span>
+        <span class="command-argument">u32</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_node_set_sec_fc</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets security frame counter.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u32</span>Sec frame counter
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> node set-sec-level</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_node_set_sec_level</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets security level. 0 = No security, 1 = RESERVED, 2 = Authentication only, 3 = Encrypted and Authenticated</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>Sec level between 0 to 3.
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+<div class="group">
+  <div class="group-header">
+    <h2 class="group-name"> switch</h2>
+  </div>
+  <div class="group-info">
+    <span class="help">switch related commands</span>
+    
+    <div class="command-list">
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> switch toggle</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_switch_toggle</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sends a toggle command.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> switch sleep</span>
+      <span class="command-handler">sl_zigbee_gpd_af_cli_switch_sleep</span>
+    </div>
+    <div class="command-info">
+      <div class="help">sets gpd as a sleepy device.</div>
+      
+      
+    </div>
+  </div>
+    </div>
+  </div>
+</div></div>
+
+<script>
+searchbar = document.getElementById('search');
+searchbar.addEventListener('input', function(e) {
+  value = e.target.value.toLowerCase();
+  commands = document.querySelectorAll('.command-name');
+  commands.forEach(function(el) {
+    if (el.textContent.trim().toLowerCase().includes(value)) {
+      el.closest('.command').style.display = 'block';
+    } else {
+      el.closest('.command').style.display = 'none';
+    }
+  });
+});
+</script>
+</body>
+</html>

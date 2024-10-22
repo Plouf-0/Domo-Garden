@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "gpd-switch_silabs_debug",
+            "cwd": "${workspaceFolder}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "serverpath": "C:/SiliconLabs/SimplicityStudio/v5/developer/adapter_packs/exx32/JLinkGDBServerCL.exe",
+            "servertype": "jlink",
+            "gdbPath": "C:\\SiliconLabs\\SimplicityStudio\\v5\\developer\\adapter_packs\\exx32\\arm-none-eabi-gdb.exe",
+            "device": "Cortex-M33",
+            "svdFile": "C:\\SiliconLabs\\SimplicityStudio\\v5\\offline\\svd\\efr32mg22e224f512im40.svd",
+            "runToEntryPoint": "main",
+            "serverArgs": [
+                "-select",
+                "usb = 440331522"
+            ],
+            "rtos": "FreeRTOS",
+            "executable": "gpd-switch_cmake\\build\\default_config\\gpd-switch.out"
+        }
+    ]
+}

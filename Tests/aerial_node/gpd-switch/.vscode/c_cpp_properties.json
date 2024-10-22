@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "gpd-switch",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Users/t1nou/SimplicityStudio/SDKs/simplicity_sdk/platform/service/sleeptimer/inc"
+            ],
+            "defines": [],
+            "compilerPath": "",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}
